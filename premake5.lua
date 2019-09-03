@@ -21,3 +21,6 @@ project "ImGui"
         "imstb_truetype.h",
         "imgui_demo.cpp"
     }
+
+    filter "system:linux"
+        pic "on"
