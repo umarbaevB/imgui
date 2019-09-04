@@ -1,10 +1,10 @@
 project "ImGui"
     kind "StaticLib"
     language "C++"
-    cppdialect "C++11" --C++11/14/17
-    staticruntime "on"
+    cppdialect "C++14" --C++11/14/17
     systemversion "latest"
-    
+    staticruntime "on"
+
     targetdir ("build/" .. outputdir .. "/%{prj.name}")
     objdir ("build-interm/" .. outputdir .. "/%{prj.name}")
 
@@ -24,3 +24,12 @@ project "ImGui"
 
     filter "system:linux"
         pic "on"
+    
+
+    filter "configurations:Debug"
+		runtime "Debug"
+		symbols "on"
+
+	filter "configurations:Release"
+		runtime "Release"
+		optimize "on"
